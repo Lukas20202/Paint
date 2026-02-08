@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div id="paintBox">
+            <button class="buttons" onclick="changeColor('#000000')" style="background-color: #000000;"></button>
+            <button class="buttons" onclick="changeColor('#7F7F7F')" style="background-color: #7F7F7F;"></button>
+            <button class="buttons" onclick="changeColor('#880015')" style="background-color: #880015;"></button>
+            <button class="buttons" onclick="changeColor('#ED1C24')" style="background-color: #ED1C24;"></button>
+            <button class="buttons" onclick="changeColor('#FF7F27')" style="background-color: #FF7F27;"></button>
+            <button class="buttons" onclick="changeColor('#FFF200')" style="background-color: #FFF200;"></button>
+            <button class="buttons" onclick="changeColor('#22B14C')" style="background-color: #22B14C;"></button>
+            <button class="buttons" onclick="changeColor('#00A2E8')" style="background-color: #00A2E8;"></button>
+            <button class="buttons" onclick="changeColor('#3F48CC')" style="background-color: #3F48CC;"></button>
+            <button class="buttons" onclick="changeColor('#A349A4')" style="background-color: #A349A4;"></button>
+            <button class="buttons" onclick="changeColor('#FFFFFF')" style="background-color: #FFFFFF;"></button>
+            <button class="buttons" onclick="changeColor('#C3C3C3')" style="background-color: #C3C3C3;"></button>
+            <button class="buttons" onclick="changeColor('#B97A57')" style="background-color: #B97A57;"></button>
+            <button class="buttons" onclick="changeColor('#FFAEC9')" style="background-color: #FFAEC9;"></button>
+            <button class="buttons" onclick="changeColor('#FFC90E')" style="background-color: #FFC90E;"></button>
+            <button class="buttons" onclick="changeColor('#EFE4B0')" style="background-color: #EFE4B0;"></button>
+            <button class="buttons" onclick="changeColor('#B5E61D')" style="background-color: #B5E61D;"></button>
+            <button class="buttons" onclick="changeColor('#99D9EA')" style="background-color: #99D9EA;"></button>
+            <button class="buttons" onclick="changeColor('#7092BE')" style="background-color: #7092BE;"></button>
+            <button class="buttons" onclick="changeColor('#C8BFE7')" style="background-color: #C8BFE7;"></button>
+        </div>
+        <div id="toolsBox">
+            <div class="sizeWrapper">
+                <button class="buttons"><img src=image/size.png></button>
+                <div id="sizeSlider">
+                    <input id="size" oninput="changeSize()" type="range" min="1" max="100" value="5">
+                </div>
+            </div>
+            <button class="buttons" onclick="selectPencil()"><img src=image/paintBrush.png></button>
+            <button class="buttons" onclick="selectEraser()"><img src=image/eraser.png></button>
+            <button class="buttons" onclick="fill()"><img src=image/fill.png></button>
+            <button class="buttons" onclick="clearCanvas()"><img src=image/clear.png></button>
+            <button class="buttons" id="save" onclick="openSaveWrapper()"><img src=image/save.png></button>
+            <button class="buttons" onclick="undo()"><img src=image/arrow.png></button>
+            <button class="buttons" onclick="redo()"><img src=image/arrow.png style="transform: scaleX(-1);"></button>
+        </div>
+        <div id="saveWrapper">
+            <h1>Bild speichern?</h1>
+            <button id="yes" onclick="saveImage()">ja</button>
+            <button id="no" onclick="closeSaveWrapper()">Nein</button>
+        </div>
+    </header>
+    <main>
+       <div id="container">
+            <canvas id="canvas"></canvas>
+       </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
