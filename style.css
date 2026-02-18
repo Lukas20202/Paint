@@ -144,6 +144,9 @@ h1{
 #no{
     background-color: red;
 }
+#canvas{
+    touch-action: none;
+}
 
 
 

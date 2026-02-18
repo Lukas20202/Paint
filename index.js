@@ -26,14 +26,14 @@ function getMousePos(e) {
     return { mouseX, mouseY };
 }                                        //Gibt die Mausposition relativ zum Canvas zurück
 
-canvas.addEventListener("mousedown", function (e) {
+canvas.addEventListener("pointerdown", function (e) {
   isDrawing = true;
   let pos = getMousePos(e);
   lastX = pos.mouseX;
   lastY = pos.mouseY;
 });                                     //Startet das Zeichnen
 
-canvas.addEventListener("mousemove", function (event) {
+canvas.addEventListener("pointermove", function (event) {
   if (isDrawing === false) {
     return;
   }
@@ -58,7 +58,7 @@ canvas.addEventListener("mousemove", function (event) {
   lastY = pos.mouseY;
 });                                         //Zeichnet Linien auf dem Canvas, wenn die Maus gedrückt ist
 
-canvas.addEventListener("mouseup", function () {
+canvas.addEventListener("pointerup", function () {
     isDrawing = false;
     let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     undoStack.push(imageData);
